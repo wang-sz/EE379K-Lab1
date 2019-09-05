@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 {
   int client_socket_fd;
   struct sockaddr_in server_addr;
-  char *message = "this is a lowercase sentence.";
+  char *message = "Input lowercase sentence:";
   char buf[BUFSIZE]; // data buffer
   int byte_size;
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
     exit(EXIT_FAILURE);
   }
 
-  if((byte_size = write(client_socket_fd, buf, BUFSIZE)) < 0)
+  if((byte_size = write(client_socket_fd, message, strlen(message))) < 0)
   {
     perror("ERROR writing to socket");
     exit(EXIT_FAILURE);
@@ -51,5 +51,5 @@ int main(int argc, char **argv)
     exit(EXIT_FAILURE);
   }
 
-  printf("From Server:%s", buf);
+  printf("From Server:%s\n", buf);
 }

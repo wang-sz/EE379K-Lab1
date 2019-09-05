@@ -17,6 +17,7 @@ int main(int argc, char **argv)
   int conn_socket_fd; // connection socket
   struct sockaddr_in server_addr; // server's address
   struct sockaddr_in client_addr; // client's address
+  int client_len; // size of client_addr
   char buf[BUFSIZE]; // data buffer
   int optval; // flag val for setsockopt
   int byte_size; // message byte size
@@ -44,14 +45,15 @@ int main(int argc, char **argv)
     exit(EXIT_FAILURE);
   }
 
-  printf("The server is ready to receive");
+  printf("The server is ready to receive\n");
+
+  client_len = sizeof(client_addr);
 
   while(1)
   {
     // wait for connection request
-    conn_socket_fd = accept(server_socket_fd, (struct sockaddr *)&client_addr.sin_addr.s_addr, sizeof(client_addr));
-    printf(client_addr.sin_addr.s_addr);
-    printf(conn_socket_fd, client_addr.sin_port);
+    conn_socket_fd = accept(server_socket_fd, (struct sockaddr *)&client_addr.sin_addr.s_addr, &client_len);
+    printf("(%d, %d)\n", client_addr.sin_addr.s_addr, client_addr.sin_port);
 
     // clear buffer and read from client
     bzero(buf, BUFSIZE);
@@ -60,9 +62,11 @@ int main(int argc, char **argv)
       perror("ERROR reading from socket");
       exit(EXIT_FAILURE);
     }
+    // printf("Received:%s\n", buf);
 
     // convert to all uppercase and send to client
     to_upper(buf);
+    // printf("Send:%s\n", buf);
     if((byte_size = write(conn_socket_fd, buf, BUFSIZE)) < 0)
     {
       perror("ERROR writing to socket");
