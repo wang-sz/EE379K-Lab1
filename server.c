@@ -21,10 +21,10 @@ int main(int argc, char **argv) {
   int byte_size; // message byte size
 
   server_socket_fd = socket(AF_INET, SOCK_STREAM, 0);
-  // if((server_socket = socket(AF_INET,SOCK_STREAM,0)) < 0) {
-  //   perror("ERROR opening socket");
-  //   exit(server_socket);
-  // }
+  if((server_socket_fd = socket(AF_INET,SOCK_STREAM,0)) < 0) {
+    perror("ERROR opening socket");
+    exit(EXIT_FAILURE);
+  }
 
   optval = 1;
   setsockopt(server_socket_fd, SOL_SOCKET, SO_REUSEADDR, (const void *)&optval, sizeof(int));
@@ -54,6 +54,7 @@ int main(int argc, char **argv) {
     byte_size = read(conn_socket_fd, buf, BUFSIZE);
     if(byte_size < 0) {
       perror("ERROR reading from socket");
+      exit(EXIT_FAILURE);
     }
 
     // convert to all uppercase and send to client
@@ -61,6 +62,7 @@ int main(int argc, char **argv) {
     byte_size = write(conn_socket_fd, buf, BUFSIZ);
     if(byte_size < 0) {
       perror("ERROR writing to socket");
+      exit(EXIT_FAILURE);
     }
   }
 
