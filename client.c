@@ -51,5 +51,5 @@ int main(int argc, char **argv)
     exit(EXIT_FAILURE);
   }
 
-  printf("(\'From Server:\', \'%s\')\n", buf);
+  printf("From Server: %s\n", buf);
 }
