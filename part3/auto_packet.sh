@@ -14,13 +14,13 @@ urls=(
 )
 
 FILE="./ffx_packet_info.csv"
-[ -f $FILE ] $$ rm $FILE
+[ -f $FILE ] && rm $FILE
 touch $FILE
 
 for dir in {0..9}; do
   echo ${urls[$dir]} >> $FILE
   for f in {0..9}; do
-    capinfos -zcrmT ~/Documents/EE379K-Lab1/part3/${dir}/${f}.pcap >> $FILE
+    capinfos -zcrmT ./${dir}/${f}.pcap >> $FILE
   done
   echo >> $FILE
 done
