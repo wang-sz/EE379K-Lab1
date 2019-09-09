@@ -13,13 +13,18 @@ urls=(
   'https://www.utdallas.edu/'
 )
 
-FILE="./tor_packet_info.csv"
-touch $FILE
-
-for dir in {0..9}; do
-  echo ${urls[$dir]} >> $FILE
-  for f in {0..9}; do
-    capinfos -zcrmT ~/Documents/EE379K-Lab1/ffx/${dir}/${f}.pcap >> $FILE
+for i in {0..9}; do
+  [ -d ${i} ] || mkdir ${i}
+  for j in {0..9}; do
+    sudo tcpdump -U -i any -w ./${i}/${j}.pcap &> /dev/null &
+    tcp_pid=$!
+    sleep 2
+    firefox ${urls[$i]} &
+    ffx_pid=$!
+    sleep 10
+    wmctrl -a firefox && xdotool key Ctrl+w
+    #kill $ffx_pid
+    sleep 3
+    sudo kill $tcp_pid
   done
-  echo >> $FILE
 done
