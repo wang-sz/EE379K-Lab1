@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# Automatically summarizes generated .pcap files from auto_collect.sh,
+# dumping filename,num_packets,avg_packet_length into into
+# <access_method>_packet_info.csv, where <access_method> is passed in
+# as the first parameter.
+# e.g. Firefox=ffx, Tor=tor, VPN=vpn, etc.
 
 urls=(
   'https://en.wikipedia.org/wiki/Cat'
@@ -13,7 +19,8 @@ urls=(
   'https://www.utdallas.edu/'
 )
 
-FILE="./ffx_packet_info.csv"
+FILE="./${1:+${1}_}packet_info.csv"
+
 [ -f $FILE ] && rm $FILE
 touch $FILE
 
@@ -24,3 +31,8 @@ for dir in {0..9}; do
   done
   echo >> $FILE
 done
+
+unset FILE
+unset urls
+unset dir
+unset f
