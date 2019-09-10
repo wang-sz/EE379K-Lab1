@@ -1,120 +1,130 @@
 https://en.wikipedia.org/wiki/Cat
-/home/class/Documents/EE379K-Lab1/ffx/0/0.pcap,25483,1348.31
-/home/class/Documents/EE379K-Lab1/ffx/0/1.pcap,24802,1374.50
-/home/class/Documents/EE379K-Lab1/ffx/0/2.pcap,24446,1387.09
-/home/class/Documents/EE379K-Lab1/ffx/0/3.pcap,24397,1389.37
-/home/class/Documents/EE379K-Lab1/ffx/0/4.pcap,24372,1390.50
-/home/class/Documents/EE379K-Lab1/ffx/0/5.pcap,24178,1399.50
-/home/class/Documents/EE379K-Lab1/ffx/0/6.pcap,23684,1414.06
-/home/class/Documents/EE379K-Lab1/ffx/0/7.pcap,23334,1426.86
-/home/class/Documents/EE379K-Lab1/ffx/0/8.pcap,23297,1428.77
-/home/class/Documents/EE379K-Lab1/ffx/0/9.pcap,23142,1436.87
-AVGVALS                                       ,24113.5,1399.583
+./0/0.pcap,42118,4090.66
+./0/1.pcap,41086,3845.53
+./0/2.pcap,41332,3998.66
+./0/3.pcap,41110,3977.33
+./0/4.pcap,41313,4030.99
+./0/5.pcap,41258,4030.51
+./0/6.pcap,41360,4102.41
+./0/7.pcap,41065,4041.69
+./0/8.pcap,40724,3964.97
+./0/9.pcap,41157,4117.00
+AVGVALS   ,41252.3,4019.975
 
 https://en.wikipedia.org/wiki/Dog
-/home/class/Documents/EE379K-Lab1/ffx/1/0.pcap,23100,1439.12
-/home/class/Documents/EE379K-Lab1/ffx/1/1.pcap,22577,1425.15
-/home/class/Documents/EE379K-Lab1/ffx/1/2.pcap,22321,1436.35
-/home/class/Documents/EE379K-Lab1/ffx/1/3.pcap,22165,1440.34
-/home/class/Documents/EE379K-Lab1/ffx/1/4.pcap,21997,1448.57
-/home/class/Documents/EE379K-Lab1/ffx/1/5.pcap,21960,1450.58
-/home/class/Documents/EE379K-Lab1/ffx/1/6.pcap,21905,1453.43
-/home/class/Documents/EE379K-Lab1/ffx/1/7.pcap,21858,1456.12
-/home/class/Documents/EE379K-Lab1/ffx/1/8.pcap,21691,1460.40
-/home/class/Documents/EE379K-Lab1/ffx/1/9.pcap,21651,1462.69
-AVGVALS                                       ,22122.5,1447.275
+./1/0.pcap,40960,4063.16
+./1/1.pcap,40365,4026.07
+./1/2.pcap,40604,4095.29
+./1/3.pcap,40039,3980.68
+./1/4.pcap,40602,4238.48
+./1/5.pcap,40043,4120.17
+./1/6.pcap,39545,4001.37
+./1/7.pcap,40246,4210.22
+./1/8.pcap,40113,4228.46
+./1/9.pcap,39565,4046.70
+AVGVALS   ,40206.2,4101.06
 
 https://en.wikipedia.org/wiki/Egress_filtering
-/home/class/Documents/EE379K-Lab1/ffx/2/0.pcap,21593,1465.82
-/home/class/Documents/EE379K-Lab1/ffx/2/1.pcap,21410,1467.43
-/home/class/Documents/EE379K-Lab1/ffx/2/2.pcap,21398,1467.96
-/home/class/Documents/EE379K-Lab1/ffx/2/3.pcap,21374,1469.18
-/home/class/Documents/EE379K-Lab1/ffx/2/4.pcap,21364,1469.57
-/home/class/Documents/EE379K-Lab1/ffx/2/5.pcap,21309,1472.65
-/home/class/Documents/EE379K-Lab1/ffx/2/6.pcap,21229,1477.01
-/home/class/Documents/EE379K-Lab1/ffx/2/7.pcap,21197,1478.71
-/home/class/Documents/EE379K-Lab1/ffx/2/8.pcap,21185,1479.25
-/home/class/Documents/EE379K-Lab1/ffx/2/9.pcap,21092,1484.39
-AVGVALS                                       ,21315.1,1473.197
+./2/0.pcap,40009,4252.30
+./2/1.pcap,39366,4077.59
+./2/2.pcap,39282,4085.74
+./2/3.pcap,40246,4357.94
+./2/4.pcap,39571,4183.92
+./2/5.pcap,39126,4053.84
+./2/6.pcap,39948,4298.62
+./2/7.pcap,39583,4235.61
+./2/8.pcap,39775,4294.43
+./2/9.pcap,39433,4170.44
+AVGVALS   ,39633.9,4201.043
 
 http://web.mit.edu/
-/home/class/Documents/EE379K-Lab1/ffx/3/0.pcap,21068,1485.73
-/home/class/Documents/EE379K-Lab1/ffx/3/1.pcap,20418,1493.49
-/home/class/Documents/EE379K-Lab1/ffx/3/2.pcap,20203,1505.79
-/home/class/Documents/EE379K-Lab1/ffx/3/3.pcap,20044,1515.09
-/home/class/Documents/EE379K-Lab1/ffx/3/4.pcap,19934,1521.97
-/home/class/Documents/EE379K-Lab1/ffx/3/5.pcap,19765,1533.32
-/home/class/Documents/EE379K-Lab1/ffx/3/6.pcap,19556,1547.68
-/home/class/Documents/EE379K-Lab1/ffx/3/7.pcap,19356,1561.48
-/home/class/Documents/EE379K-Lab1/ffx/3/8.pcap,19229,1570.34
-/home/class/Documents/EE379K-Lab1/ffx/3/9.pcap,19071,1581.57
-AVGVALS                                       ,19864.4,1531.646
+./3/0.pcap,39239,4153.64
+./3/1.pcap,38725,4188.29
+./3/2.pcap,38894,4297.25
+./3/3.pcap,38558,4206.93
+./3/4.pcap,38723,4315.80
+./3/5.pcap,38562,4358.23
+./3/6.pcap,38468,4395.60
+./3/7.pcap,37946,4284.00
+./3/8.pcap,37913,4320.55
+./3/9.pcap,38015,4440.46
+AVGVALS   ,38504.3,4296.075
 
 http://www.unm.edu/
-/home/class/Documents/EE379K-Lab1/ffx/4/0.pcap,18962,1589.14
-/home/class/Documents/EE379K-Lab1/ffx/4/1.pcap,16826,1458.98
-/home/class/Documents/EE379K-Lab1/ffx/4/2.pcap,12559,1301.01
-/home/class/Documents/EE379K-Lab1/ffx/4/3.pcap,11797,1359.65
-/home/class/Documents/EE379K-Lab1/ffx/4/4.pcap,11078,1404.63
-/home/class/Documents/EE379K-Lab1/ffx/4/5.pcap,10165,1506.70
-/home/class/Documents/EE379K-Lab1/ffx/4/6.pcap,9135,1622.26
-/home/class/Documents/EE379K-Lab1/ffx/4/7.pcap,8291,1743.49
-/home/class/Documents/EE379K-Lab1/ffx/4/8.pcap,7680,1861.39
-/home/class/Documents/EE379K-Lab1/ffx/4/9.pcap,7112,1971.01
-AVGVALS                                       ,11360.5,1582.826
+./4/0.pcap,37763,4370.95
+./4/1.pcap,34366,4559.33
+./4/2.pcap,32893,4694.84
+./4/3.pcap,31843,4613.05
+./4/4.pcap,31708,4907.95
+./4/5.pcap,31268,5047.62
+./4/6.pcap,29630,4926.56
+./4/7.pcap,29613,5368.25
+./4/8.pcap,28582,5436.08
+./4/9.pcap,28232,5682.09
+AVGVALS   ,31589.8,5140.672
 
 https://cmu.edu/
-/home/class/Documents/EE379K-Lab1/ffx/5/0.pcap,6353,2158.51
-/home/class/Documents/EE379K-Lab1/ffx/5/1.pcap,5322,2243.86
-/home/class/Documents/EE379K-Lab1/ffx/5/2.pcap,4243,2482.70
-/home/class/Documents/EE379K-Lab1/ffx/5/3.pcap,3360,2746.50
-/home/class/Documents/EE379K-Lab1/ffx/5/4.pcap,2378,1671.39
-/home/class/Documents/EE379K-Lab1/ffx/5/5.pcap,2158,1197.03
-/home/class/Documents/EE379K-Lab1/ffx/5/6.pcap,1677,1117.34
-/home/class/Documents/EE379K-Lab1/ffx/5/7.pcap,1582,1179.90
-/home/class/Documents/EE379K-Lab1/ffx/5/8.pcap,565,462.42
-/home/class/Documents/EE379K-Lab1/ffx/5/9.pcap,370,93.32
-AVGVALS                                       ,2800.8,1535.297
+./5/0.pcap,26944,5615.95
+./5/1.pcap,26259,5790.84
+./5/2.pcap,25980,5928.29
+./5/3.pcap,25315,5881.63
+./5/4.pcap,25349,6050.22
+./5/5.pcap,24790,5981.31
+./5/6.pcap,25252,6329.24
+./5/7.pcap,24476,6191.76
+./5/8.pcap,23894,6131.28
+./5/9.pcap,23689,6222.27
+AVGVALS   ,25194.8,6312.279
 
 https://www.berkeley.edu/
-/home/class/Documents/EE379K-Lab1/ffx/6/2.pcap,51706,9287.27
-/home/class/Documents/EE379K-Lab1/ffx/6/3.pcap,51534,9305.14
-/home/class/Documents/EE379K-Lab1/ffx/6/4.pcap,51778,9334.19
-/home/class/Documents/EE379K-Lab1/ffx/6/8.pcap,50957,9483.38
-AVGVALS                                       ,51493.75,9352.495
+./6/0.pcap,24035,6548.54
+./6/1.pcap,22491,6694.00
+./6/2.pcap,22583,6846.14
+./6/3.pcap,22017,6691.22
+./6/4.pcap,22302,6961.14
+./6/5.pcap,21852,6921.39
+./6/6.pcap,22149,7116.52
+./6/7.pcap,21361,7007.63
+./6/8.pcap,20763,6813.17
+./6/9.pcap,21307,7159.13
+AVGVALS   ,22086,6875.888
 
 https://www.utexas.edu/
-/home/class/Documents/EE379K-Lab1/ffx/7/0.pcap,50479,9549.30
-/home/class/Documents/EE379K-Lab1/ffx/7/3.pcap,44046,9434.64
-/home/class/Documents/EE379K-Lab1/ffx/7/4.pcap,42478,9355.13
-/home/class/Documents/EE379K-Lab1/ffx/7/6.pcap,38925,9150.88
-/home/class/Documents/EE379K-Lab1/ffx/7/7.pcap,36936,9025.18
-/home/class/Documents/EE379K-Lab1/ffx/7/8.pcap,35249,8864.02
-/home/class/Documents/EE379K-Lab1/ffx/7/9.pcap,33456,8691.40
-AVGVALS                                       ,40224.143,9152.936
+./7/0.pcap,21089,7165.26
+./7/1.pcap,20239,7188.52
+./7/2.pcap,18919,6878.64
+./7/3.pcap,17894,6505.92
+./7/4.pcap,15984,5694.28
+./7/5.pcap,14969,5269.85
+./7/6.pcap,13926,4677.10
+./7/7.pcap,12748,3905.10
+./7/8.pcap,11961,3260.51
+./7/9.pcap,10373,1721.01
+AVGVALS   ,16010.2,5226.619
 
 https://www.asu.edu/
-/home/class/Documents/EE379K-Lab1/ffx/8/0.pcap,31995,8504.21
-/home/class/Documents/EE379K-Lab1/ffx/8/1.pcap,30509,8710.89
-/home/class/Documents/EE379K-Lab1/ffx/8/2.pcap,29289,9067.67
-/home/class/Documents/EE379K-Lab1/ffx/8/3.pcap,28720,9292.74
-/home/class/Documents/EE379K-Lab1/ffx/8/4.pcap,27704,9479.08
-/home/class/Documents/EE379K-Lab1/ffx/8/6.pcap,26625,9967.64
-/home/class/Documents/EE379K-Lab1/ffx/8/7.pcap,25998,10223.38
-/home/class/Documents/EE379K-Lab1/ffx/8/8.pcap,25306,10421.93
-/home/class/Documents/EE379K-Lab1/ffx/8/9.pcap,24859,10610.70
-AVGVALS                                       ,25100.5,8628.026
+./8/0.pcap,9088,489.61
+./8/1.pcap,8217,462.09
+./8/2.pcap,7445,475.95
+./8/3.pcap,6832,497.75
+./8/4.pcap,6216,521.76
+./8/5.pcap,5644,545.79
+./8/6.pcap,4988,580.39
+./8/7.pcap,4434,595.92
+./8/8.pcap,3946,639.95
+./8/9.pcap,3436,703.79
+AVGVALS   ,6024.6,551.3
 
 https://www.utdallas.edu/
-/home/class/Documents/EE379K-Lab1/ffx/9/0.pcap,76137,4257.52
-/home/class/Documents/EE379K-Lab1/ffx/9/1.pcap,68570,4257.63
-/home/class/Documents/EE379K-Lab1/ffx/9/2.pcap,60641,4283.83
-/home/class/Documents/EE379K-Lab1/ffx/9/3.pcap,53151,4282.69
-/home/class/Documents/EE379K-Lab1/ffx/9/4.pcap,45530,4290.85
-/home/class/Documents/EE379K-Lab1/ffx/9/5.pcap,38834,4204.10
-/home/class/Documents/EE379K-Lab1/ffx/9/6.pcap,31808,4122.39
-/home/class/Documents/EE379K-Lab1/ffx/9/7.pcap,25784,3841.57
-/home/class/Documents/EE379K-Lab1/ffx/9/8.pcap,6955,4620.26
-/home/class/Documents/EE379K-Lab1/ffx/9/9.pcap,12339,2808.32
-AVGVALS                                       ,41974.9,4096.916
+./9/0.pcap,2937,793.98
+./9/1.pcap,2216,575.94
+./9/2.pcap,2071,573.37
+./9/3.pcap,1862,559.56
+./9/4.pcap,1586,330.26
+./9/5.pcap,1436,346.50
+./9/6.pcap,1280,262.67
+./9/7.pcap,1159,270.31
+./9/8.pcap,1025,279.84
+./9/9.pcap,903,292.53
+AVGVALS   ,1647.8,428.496
 
