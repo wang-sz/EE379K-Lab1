@@ -18,8 +18,8 @@
 \begin{document}
 
 \maketitle
-\section*{Part 1:}
-\subsection*{Step 1:}
+\section*{Part 1 - Networking and Denial of Service}
+\subsection*{Step 1 - Client and Server in C}
 For step 1, the client and server in C were implemented to closely match the Python versions.
 For simplicity, the client sends the same hard coded message each time, similar to the Python
 client. The C client and server were tested with the Python client and server to ensure
@@ -45,7 +45,7 @@ To run them, simply execute either:
 \begin{center}
   \verb|./server| or \verb|./client|
 \end{center}
-\subsection*{Step 2:}
+\subsection*{Step 2 - DOS Attack}
 For step 2, the DOS attack was implemented using a command line tool called \verb|hping3| using
 the options
 \begin{center}
@@ -81,6 +81,27 @@ Figure~\ref{fig:timeout}, also with some packet details cut out to ensure legibi
 The rest of the tcpdump record of the DOS attack is in \verb|output.pcap| and shows the flood
 of SYN packets sent to the server at IP \verb|127.0.0.2:12000|.
 \section*{Part 2:}
+\section*{Part 3 - Internet Traffic On Different Connections}
+For this part, a script (\verb|auto_collect.sh|) was used to automate accessing 10 different
+websites 10 times each and recording network traffic with \verb|tcpdump|. This script was run
+once per connection type (VPN, TOR, Firefox). Afterwards, another script (\verb|auto_summarize.sh|)
+was used to automate summarizing the resulting \verb|.pcap| files for packets sent per access
+and the average packet size per access. The collected data regarding the average number of packets
+is summarized in Figure~\ref{fig:avg_packets} and the data regarding the average size of packets
+is summarized in Figure~\ref{fig:avg_size}.
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1\linewidth]{./average_packets.png}
+  \caption{\label{fig:avg_packets}
+  The average number of packets sent over a 10 second connection for 10 different websites on 3 different connections}
+\end{figure}
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=1\linewidth]{./average_size.png}
+  \caption{\label{fig:avg_size}
+  The average size of packets sent over a 10 second connection for 10 different websites on 3 different connections}
+\end{figure}
+
 
 % \label{part1:step-1}
 % Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi
