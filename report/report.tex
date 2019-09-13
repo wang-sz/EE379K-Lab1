@@ -97,6 +97,18 @@ following options:
       --output-file=zmap_result.txt \   # output file
       --max-runtime=10000               # max runtime (seconds)
 \end{minted}
+The results of the zmap scan were:
+\begin{verbatim}
+  1261303 machines probed
+  1534 machines responded
+  0.12% hitrate
+\end{verbatim}
+Further information on each IP in the result list can be found using the \verb|whois| command, such
+as the network the IP belongs in. This is specified by the Classless Inter-Domain Routing (CIDR)
+info. In order to group all the IPs that belong in the same network, a Python and Bash script 
+(\verb|network_whois.py| and \verb|whois_grep.sh|) were used to systematically run \verb|whois|
+on each IP and capture the CIDR or inetnum to get the range of IPs that belong in the same network.
+Then, 
 \section*{Part 3 - Internet Traffic On Different Connections}
 For this part, a script (\verb|auto_collect.sh|) was used to automate accessing 10 different
 websites 10 times each and recording network traffic with \verb|tcpdump|. This script was run
