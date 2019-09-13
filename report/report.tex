@@ -108,7 +108,22 @@ as the network the IP belongs in. This is specified by the Classless Inter-Domai
 info. In order to group all the IPs that belong in the same network, a Python and Bash script 
 (\verb|network_whois.py| and \verb|whois_grep.sh|) were used to systematically run \verb|whois|
 on each IP and capture the CIDR or inetnum to get the range of IPs that belong in the same network.
-Then, 
+Then, using another Python script, \verb|analyze.py|, the IPs and other network information were
+grouped accordingly into the following JSON files:
+\begin{verbatim}
+  - large_nets.json: list of networks that have multiple subnets
+        (represented by multiple CIDRs)
+  - net_ips.json: dictionary mapping a network's CIDR to a list
+        of probed IPs in the network
+  - net_sizes.json: dictionary mapping a network's CIDR to the
+        number of probed IPs in the network
+  - subnets.json: list of networks and their subnets
+\end{verbatim}
+Some notable observations were that there were some networks with a large range of IPs, so the 
+\verb|whois| command would show several CIDRs to show the full span of the network. However,
+sometimes the command would also return several fields of CIDRs, indicating that the probed IP
+belonged to a subnetwork of a larger network, or even more nested than just two layers of
+networks.
 \section*{Part 3 - Internet Traffic On Different Connections}
 For this part, a script (\verb|auto_collect.sh|) was used to automate accessing 10 different
 websites 10 times each and recording network traffic with \verb|tcpdump|. This script was run
