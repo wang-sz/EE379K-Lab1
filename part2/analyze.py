@@ -94,9 +94,9 @@ def process_cidr_arr(cidr_arr, curr_ip):
 
 def print_results():
     subnets_file = open("analyze_results/subnets.json", "a")
-    multiple_cidrs_file = open("analyze_results/multiple_cidrs.json", "a")
-    networks_file = open("analyze_results/networks.json", "a")
-    network_ip_file = open("analyze_results/network_ip.json", "a")
+    multiple_cidrs_file = open("analyze_results/large_nets.json", "a")
+    networks_file = open("analyze_results/net_sizes.json", "a")
+    network_ip_file = open("analyze_results/net_ips.json", "a")
 
     subnet_arr = list(subnet_set)
     subnets_file.write(json.dumps(subnet_arr, indent = 4))
