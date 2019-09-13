@@ -4,6 +4,7 @@
 \usepackage{minted}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{CJKutf8}
 
 \author{Student: Sean Wang, szw87 \\ Professor: Mohit Tiwari, Antonio Espinoza \\ Department of Electrical \& Computer Engineering \\ The University of Texas at Austin}
 \date{\today}
@@ -31,7 +32,7 @@ Python client showing
   From Server: b'INPUT LOWERCASE SENTENCE:'
 \end{verbatim}
 and the C client showing
-\begin{verbatim}{bash}
+\begin{verbatim}
   From Server: INPUT LOWERCASE SENTENCE:
 \end{verbatim}
 To build the server, compile it with:
@@ -59,10 +60,12 @@ the options
       --syn \                   # send SYN packets
       127.0.0.2                 # destination IP
 \end{minted}
+
 These flags specify to stop sending packets to \verb|127.0.0.2:12000| after sending/receiving 15000
 SYN packets, using randomized IP addresses to disguise the actual source and prevent the
 server's SYN-ACK packets from reaching the actual source. Additionally, the \verb|--flood|
-option just says to send packets as fast as possible.\\
+option just says to send packets as fast as possible.
+
 As a result, the server receives many requests for establishing a connection, but because the
 SYN-ACK sent from the server never reaches the actual sender of the initial SYN packet, the
 3-way handshake is never completed and the server is left waiting on a response from what it
@@ -74,7 +77,7 @@ cut out to ensure legibility.
   \caption{\label{fig:handshake}
   An incomplete three-way handshake}
 \end{figure}
-\\
+
 Since the server is now swamped with connection requests, the real client (at IP \verb|127.0.0.1|)
 cannot have its connection request processed by the server and times out, as shown in
 Figure~\ref{fig:timeout}, also with some packet details cut out to ensure legibility.
@@ -84,7 +87,7 @@ Figure~\ref{fig:timeout}, also with some packet details cut out to ensure legibi
   \caption{\label{fig:timeout}
   Client's sent SYN packet and client timeout}
 \end{figure}
-\\
+
 The rest of the tcpdump record of the DOS attack is in \verb|output.pcap| and shows the flood
 of SYN packets sent to the server at IP \verb|127.0.0.2:12000|.
 \section*{Part 2 - zmap scan}
@@ -103,6 +106,7 @@ The results of the zmap scan were:
   1534 machines responded
   0.12% hitrate
 \end{verbatim}
+
 Further information on each IP in the result list can be found using the \verb|whois| command, such
 as the network the IP belongs in. This is specified by the Classless Inter-Domain Routing (CIDR)
 info. In order to group all the IPs that belong in the same network, a Python and Bash script 
@@ -119,6 +123,7 @@ grouped accordingly into the following JSON files:
         number of probed IPs in the network
   - subnets.json: list of networks and their subnets
 \end{verbatim}
+
 Some notable observations were that there were some networks with a large range of IPs, so the 
 \verb|whois| command would show several CIDRs to show the full span of the network. However,
 sometimes the command would also return several fields of CIDRs, indicating that the probed IP
@@ -131,20 +136,23 @@ once per connection type (VPN, TOR, Firefox). Afterwards, another script (\verb|
 was used to automate summarizing the resulting \verb|.pcap| files for packets sent per access
 and the average packet size per access. The collected data regarding the average number of packets
 is summarized in Figure~\ref{fig:avg_packets} and the data regarding the average size of packets
-is summarized in Figure~\ref{fig:avg_size}.\\
+is summarized in Figure~\ref{fig:avg_size}.
+
 Using just a regular browser to access the websites, a passive device on the network can see
 all kinds of information, including which websites were visited and the sizes of the packets. With a
 VPN, \verb|tcpdump| captured information showing the client sending packets to the VPN server and
 vice versa. However, information regarding packet source and destination were still visible. Finally,
 using TOR, the captured network traffic showed mostly packets being sent to and from \verb|127.0.0.1|
 and not the IP of, say, \verb|wikipedia.org|. As a result, it was much harder to tell exactly what
-websites were visited just by looking at network traffic in Wireshark.\\
+websites were visited just by looking at network traffic in Wireshark.
+
 Although difficult, it is possible to determine which of the 10 websites was visited simply based on
 connection statistics. For example, in Figure~\ref{fig:avg_size}, UC Berkeley's website has, on average,
 larger packet sizes than most of the other websites, so given only these basic connection statistics,
 guessing UC Berkeley's website as the site visited due to large packet sizes is not unreasonable.
 Additionally, connection statistics that show a consistent rate packets sent and a consistent packet
-size would most likely imply that a video or stream was being watched.\\
+size would most likely imply that a video or stream was being watched.
+
 Some other observations of note were in regards to the number of packets sent per connection. The 
 average number of packets sent each iteration of visiting the same website generally decreased as the
 website was visited more. Also, since the websites were visited in a consistent order (from left to 
@@ -162,7 +170,40 @@ trend of decreasing average number of packets per connection.
   \caption{\label{fig:avg_size}
   The average size of packets sent over a 10 second connection for 10 different websites on 3 different connections}
 \end{figure}
-\section*{Part 4 - Packet splitting}
+\section*{Part 4 - Splitting Packets}
+Using \verb|tcpdump| to record network traffic and Wireshark to view the packets, it is possible to
+see certain details of a connection. In this part, these tools were used to analyze a connection to
+http://baiwanzhan.com. Performing a generic search on the website resulted in an HTTP GET request
+visible among the packets. Searching the phrase '\begin{CJK*}{UTF8}{gbsn}法轮\end{CJK*}' in the search
+bar resulted in a connection reset. This is also visible in the \verb|.pcap| file as the client receiving
+a reset TCP packet, seen as \verb|[RST]| in Wireshark. One way to get around this censorship would be to
+split the packet into 2 and send the request split up in order to bypass the relay node that is intercepting
+traffic and sending resets to censor certain words or phrases. This way, when the split packets reach the
+destination, the server will reassemble the packets and view the result as one complete packet. This is
+visible in Figure~\ref{fig:pkt_1} and Figure~\ref{fig:pkt_2}.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.85\linewidth]{./packet1.png}
+  \caption{\label{fig:pkt_1}
+  The first half of the GET request. This includes the encoded first character.}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.85\linewidth]{./packet2.png}
+  \caption{\label{fig:pkt_2}
+  The second half of the GET request. This includes the encoded second character.}
+\end{figure}
+
+However, the result of this was that the request still did not get through. This is certainly a possibility
+since it would make sense for the censorship technology to be updated and close this loophole.
+
+Using Wireshark to examine the packets from steps 2, where a generic search was performed, and from
+step 3, where a search for the censored phrase was performed, it is revealed that the time to live (TTL)
+of packets sent from the server is generally 43 seconds or 45 seconds. This is a relatively short TTL
+and is probably in place to effectively balance traffic load and redirect traffic faster since the host
+might be implementing a rerouting method where the IP on the authoritative DNS needs to be modified.
+\section*{Conclusion}
+
 
 % \label{part1:step-1}
 % Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi
