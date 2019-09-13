@@ -87,7 +87,16 @@ Figure~\ref{fig:timeout}, also with some packet details cut out to ensure legibi
 \\
 The rest of the tcpdump record of the DOS attack is in \verb|output.pcap| and shows the flood
 of SYN packets sent to the server at IP \verb|127.0.0.2:12000|.
-\section*{Part 2:}
+\section*{Part 2 - zmap scan}
+For this part, a zmap scan was run for about 2 hours and 47 minutes (10000 seconds) with the
+following options:
+\begin{minted}{bash}
+  $ sudo zmap \
+      --blacklist-file=blacklist.conf \ # subnets to exclude
+      --target-port=80 \                # port number to scan
+      --output-file=zmap_result.txt \   # output file
+      --max-runtime=10000               # max runtime (seconds)
+\end{minted}
 \section*{Part 3 - Internet Traffic On Different Connections}
 For this part, a script (\verb|auto_collect.sh|) was used to automate accessing 10 different
 websites 10 times each and recording network traffic with \verb|tcpdump|. This script was run
