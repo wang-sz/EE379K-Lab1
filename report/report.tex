@@ -136,7 +136,10 @@ IPs, due to the '\verb|/16|' at the end of the CIDR, while only 6 machines respo
 \verb|zmap| on port 80. Also, unlike some other networks, this network does not divide into any other
 subnets. Using \verb|traceroute| on a specific IP that was probed in the initial \verb|zmap|,
 \verb|146.141.234.183|, can show how many machines a packet must go through to reach the final
-destination. In this case, it took 30 hops to reach \verb|146.141.234.183|.
+destination. In this case, it took 30 hops to reach \verb|146.141.234.183|. Additionally, running
+\verb|zmap| on the network on port 22 gave almost 25,000 responses with a hitrate of 38.13\% in just
+1000 seconds and running \verb|zmap| on the network on port 443 gave about 35,000 responses with a hitrate
+of 53.72\% in just 1000 seconds. 
 \section*{Part 3 - Internet Traffic On Different Connections}
 For this part, a script (\verb|auto_collect.sh|) was used to automate accessing 10 different
 websites 10 times each and recording network traffic with \verb|tcpdump|. This script was run
@@ -168,13 +171,13 @@ right on Figure~\ref{fig:avg_packets} and Figure~\ref{fig:avg_size}), there seem
 trend of decreasing average number of packets per connection. 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.91\linewidth]{./average_packets.png}
+  \includegraphics[width=.82\linewidth]{./average_packets.png}
   \caption{\label{fig:avg_packets}
   The average number of packets sent over a 10 second connection for 10 different websites on 3 different connections}
 \end{figure}
 \begin{figure}[!hbtp]
   \centering
-  \includegraphics[width=.91\linewidth]{./average_size.png}
+  \includegraphics[width=.82\linewidth]{./average_size.png}
   \caption{\label{fig:avg_size}
   The average size of packets sent over a 10 second connection for 10 different websites on 3 different connections}
 \end{figure}
