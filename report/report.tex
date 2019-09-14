@@ -49,8 +49,8 @@ To run them, simply execute either:
   $ ./client
 \end{minted}
 \subsection*{Step 2 - DOS Attack}
-For step 2, the DOS attack was implemented using a command line tool called \verb|hping3| using
-the options
+For step 2, the DOS attack was implemented using a command line tool called \verb|hping3|~\cite{hping3}
+using the options
 \begin{minted}{bash}
   $ sudo hping3
       --count 15000 \           # number of packets
@@ -91,7 +91,7 @@ Figure~\ref{fig:timeout}, also with some packet details cut out to ensure legibi
 The rest of the tcpdump record of the DOS attack is in \verb|output.pcap| and shows the flood
 of SYN packets sent to the server at IP \verb|127.0.0.2:12000|.
 \section*{Part 2 - zmap scan}
-For this part, a zmap scan was run for about 2 hours and 47 minutes (10000 seconds) with the
+For this part, a zmap scan~\cite{zmap} was run for about 2 hours and 47 minutes (10000 seconds) with the
 following options:
 \begin{minted}{bash}
   $ sudo zmap \
@@ -203,16 +203,14 @@ of packets sent from the server is generally 43 seconds or 45 seconds. This is a
 and is probably in place to effectively balance traffic load and redirect traffic faster since the host
 might be implementing a rerouting method where the IP on the authoritative DNS needs to be modified.
 \section*{Conclusion}
+Overall, this lab was very interesting, but was a lot of work. It took around 35 hours since several
+tasks that took a long time due to the nature of it (\verb|zmap| scan, accessing all the websites). 
+Additionally, just figuring out how to process all the data from these tasks and what exactly to take note
+of took a decent amount of time. Then, there was the task of writing the scripts to do data extraction
+and analysis. The lab would be more enjoyable if there was less work, given that there is work from
+other classes as well, but nonetheless, there was a lot to learn from each part of the lab, such as socket
+programming in C, how a simple DOS attack works, and how to analyze network traffic in Wireshark.
 
-
-% \label{part1:step-1}
-% Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi
-% auctor lorem non justo. Nam lacus libero, pretium at, lobortis vitae, ultricies
-% et, tellus. Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet
-% magna, vitae ornare odio metus a mi. Morbi ac orci et nisl hendrerit mollis.
-% Suspendisse ut massa. Cras nec ante. Pellentesque a nulla. Cum sociis natoque
-% penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam
-% tincidunt urna. Nulla ullamcorper vestibulum turpis. Pellentesque cursus luctus
-% mauris.
-
+\bibliography{bibliography}
+\bibliographystyle{ieeetr}
 \end{document}
